@@ -122,10 +122,10 @@ var MonthViewComponent = (function () {
             return;
         this.direction = direction;
         //關閉 避免觸發onCurrentDateChanged事件
-        // if (!this.moveOnSelected) {
-        //     var adjacentDate = this.calendarService.getAdjacentCalendarDate(this.mode, direction);
-        //     this.calendarService.setCurrentDate(adjacentDate);
-        // }
+        if (!this.moveOnSelected) {
+            var adjacentDate = this.calendarService.getAdjacentCalendarDate(this.mode, direction);
+            this.calendarService.setCurrentDate(adjacentDate);
+        }
         this.refreshView();
         this.direction = 0;
         this.moveOnSelected = false;
